@@ -56,6 +56,7 @@ public class MergeSort {
     }
 
     public static void merge(int[] A, int begin, int middle, int end) {
+        //Создаем два подмассива
         int firstSubArrayLength = middle - begin + 1;
         int secondSubArrayLength = end - middle;
 
@@ -72,6 +73,7 @@ public class MergeSort {
 
         int i = 0, j = 0, k = begin;
 
+        //Вставляем наименьший элемент в основной массив
         while (i < firstSubArrayLength && j < secondSubArrayLength) {
             if (firstSubArray[i] <= secondSubArray[j]) {
                 A[k++] = firstSubArray[i++];
@@ -80,6 +82,7 @@ public class MergeSort {
             }
         }
 
+        //Оставшиеся элементы вставляем в основной массив
         while (i < firstSubArrayLength) {
             A[k++] = firstSubArray[i++];
         }
